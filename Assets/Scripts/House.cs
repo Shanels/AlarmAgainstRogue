@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,15 +5,14 @@ public class House : MonoBehaviour
 {
     [SerializeField] private UnityEvent _alarmOn;
     [SerializeField] private UnityEvent _alarmOff;
+    [SerializeField] private GameObject _door;
 
     private bool _isDoorBroken = false;
     private bool _isSomebodyInHouse = false;
 
-    void Update()
-    {
-        var door = GameObject.Find("Door");        
-
-        if (door == null && _isDoorBroken == false)
+    private void Update()
+    {             
+        if (_door == null && _isDoorBroken == false)
         {            
             _isDoorBroken = true;
         }

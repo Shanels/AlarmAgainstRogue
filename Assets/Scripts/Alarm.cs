@@ -1,38 +1,37 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Alarm : MonoBehaviour
 {
     [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private Animator _animator;
 
-    private float _target = 1f;
+    private float _target = 0f;
 
     private void Start()
     {
-        StartCoroutine(VolumeUp());
+        StartCoroutine(VolumeChange());
         _audioSource.volume = 0f;
     }
 
-    private IEnumerator VolumeUp()
+    private IEnumerator VolumeChange()
     {
         var maxDelta = 0.1f;
         var waitForOneQuarterSecond = new WaitForSecondsRealtime(0.25f);
 
         while (true)
         {
-            if(_audioSource.volume == 0.1f)
+            if (_animator.enabled)
             {
-                _target = 1;
+                _target = 1f;
             }
-            else if (_audioSource.volume == 1)
+            else if (_animator.enabled == false)
             {
-                _target = 0.1f;
+                _target = 0f;
             }
 
             _audioSource.volume = Mathf.MoveTowards(_audioSource.volume, _target, maxDelta);
-            yield return waitForOneQuarterSecond;            
+            yield return waitForOneQuarterSecond;
         }
     }
 }
