@@ -3,43 +3,36 @@ using UnityEngine.Events;
 
 public class House : MonoBehaviour
 {
-    [SerializeField] private UnityEvent _alarmOn;
-    [SerializeField] private UnityEvent _alarmOff;
+    [SerializeField] private UnityEvent _robberEnter;
+    [SerializeField] private UnityEvent _robberLeft;
     [SerializeField] private GameObject _door;
 
-    private bool _isDoorBroken = false;
-    private bool _isSomebodyInHouse = false;
+    public static bool IsDoorBroken { get; private set; } = false;
+    public static bool IsRobberInHouse { get; private set; } = false;
 
     private void Update()
-    {             
-        if (_door == null && _isDoorBroken == false)
-        {            
-            _isDoorBroken = true;
-        }
-
-        if (_isDoorBroken && _isSomebodyInHouse)
+    {
+        if (_door == null && IsDoorBroken == false)
         {
-            _alarmOn.Invoke();
-        }
-        else
-        {
-            _alarmOff.Invoke();
+            IsDoorBroken = true;
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.TryGetComponent<Robber>(out Robber robber))
-        {            
-            _isSomebodyInHouse = true;
+        {
+            IsRobberInHouse = true;
+            _robberEnter.Invoke();
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.TryGetComponent<Robber>(out Robber robber))
-        {           
-            _isSomebodyInHouse = false;
+        {
+            IsRobberInHouse = false;
+            _robberLeft.Invoke();
         }
-    }    
+    }
 }

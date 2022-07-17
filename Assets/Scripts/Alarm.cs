@@ -6,12 +6,25 @@ public class Alarm : MonoBehaviour
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private Animator _animator;
 
+    private bool _isAlarmOn;
     private float _target = 0f;
 
     private void Start()
     {
         StartCoroutine(VolumeChange());
         _audioSource.volume = 0f;
+    }
+
+    private void Update()
+    {
+        if(House.IsDoorBroken && House.IsRobberInHouse)
+        {
+            _isAlarmOn = true;
+        }
+        else
+        {
+            _isAlarmOn = false;
+        }
     }
 
     private IEnumerator VolumeChange()
@@ -21,11 +34,11 @@ public class Alarm : MonoBehaviour
 
         while (true)
         {
-            if (_animator.enabled)
+            if (_isAlarmOn)
             {
                 _target = 1f;
             }
-            else if (_animator.enabled == false)
+            else if (_isAlarmOn == false)
             {
                 _target = 0f;
             }
