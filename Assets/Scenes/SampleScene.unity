@@ -749,7 +749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3131e82756bc2ff4598d034f403bc2f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isDoorBroken:
+  _doorWasBroken:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1932068202}

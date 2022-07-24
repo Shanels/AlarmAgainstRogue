@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 public class House : MonoBehaviour
 {
-    [SerializeField] private UnityEvent _isDoorBroken;
+    [SerializeField] private UnityEvent _doorWasBroken;
     [SerializeField] private GameObject _door;
     
     public static bool IsRobberInHouse { get; private set; } = false;
@@ -12,7 +12,7 @@ public class House : MonoBehaviour
     {
         if (_door == null)
         {
-            _isDoorBroken.Invoke();
+            _doorWasBroken.Invoke();
         }
     }
 }
