@@ -1,6 +1,3 @@
 using UnityEngine;
 
-public class Gold : MonoBehaviour
-{
-
-}
+public class Gold : MonoBehaviour { }

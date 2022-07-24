@@ -442,8 +442,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 505635814}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071064, w: -0.7071072}
-  m_LocalPosition: {x: -0.00034999847, y: 0.3775, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.76425767, z: 0.24942632}
+  m_LocalPosition: {x: -0.0018820299, y: 0.65032554, z: 0}
+  m_LocalScale: {x: 0.32451376, y: 1.0006056, z: 0.24942632}
   m_Children: []
   m_Father: {fileID: 994412985}
   m_RootOrder: 1
@@ -641,7 +641,6 @@ GameObject:
   - component: {fileID: 994412984}
   - component: {fileID: 994412986}
   - component: {fileID: 994412987}
-  - component: {fileID: 994412988}
   m_Layer: 0
   m_Name: House
   m_TagString: Untagged
@@ -708,8 +707,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 994412983}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.23, y: -2.02, z: 0}
-  m_LocalScale: {x: 8, y: 4, z: 4.0092}
+  m_LocalPosition: {x: 4.2387, y: -2.514, z: 0}
+  m_LocalScale: {x: 6.11036, y: 3.0815334, z: 4.0092}
   m_Children:
   - {fileID: 1890939789}
   - {fileID: 505635815}
@@ -750,7 +749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3131e82756bc2ff4598d034f403bc2f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _robberEnter:
+  _isDoorBroken:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1932068202}
@@ -777,48 +776,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  _robberLeft:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1932068201}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   _door: {fileID: 1226196974}
---- !u!61 &994412988
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 994412983}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!1 &1013885129
 GameObject:
   m_ObjectHideFlags: 0
@@ -846,8 +804,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1013885129}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.44125003, y: 0.0010250211, z: 0}
-  m_LocalScale: {x: 0.125, y: 1.002975, z: 0.24942632}
+  m_LocalPosition: {x: 0.5762835, y: 0.16164032, z: 0}
+  m_LocalScale: {x: 0.16365646, y: 1.3019167, z: 0.24942632}
   m_Children: []
   m_Father: {fileID: 994412985}
   m_RootOrder: 2
@@ -1394,8 +1352,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1890939788}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.4395, y: 0.1275, z: 0}
-  m_LocalScale: {x: 0.125, y: 0.75, z: 0.24942632}
+  m_LocalPosition: {x: -0.5768399, y: 0.3258118, z: 0}
+  m_LocalScale: {x: 0.16365646, y: 0.97354126, z: 0.24942632}
   m_Children: []
   m_Father: {fileID: 994412985}
   m_RootOrder: 0
@@ -1511,6 +1469,7 @@ GameObject:
   - component: {fileID: 1932068202}
   - component: {fileID: 1932068201}
   - component: {fileID: 1932068200}
+  - component: {fileID: 1932068203}
   m_Layer: 0
   m_Name: Alarm
   m_TagString: Untagged
@@ -1596,7 +1555,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioSource: {fileID: 1932068202}
-  _animator: {fileID: 1932068201}
 --- !u!95 &1932068201
 Animator:
   serializedVersion: 3
@@ -1712,3 +1670,29 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!61 &1932068203
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1932068197}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 6.99, y: -4.12}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 12, y: 6.1103606}
+  m_EdgeRadius: 0
